@@ -1,7 +1,14 @@
-t = [0:0.1:10];
+t = [0:0.1:15];
 w = 7/4*pi;
 A = 3;
 y = A*sin(w.*t);
-plot(t,y);
+yp = A*w*cos(w*t);
+figure(1);
+plot(t,y,'-r',t,yp,'-b');
+legend('y','ydot');
 xlabel('Time [s]','Interpreter','Latex');
 ylabel('Asin(wt)','Interpreter','Latex');
+figure(2);
+plot(y,yp);
+xlabel('Asin(wt)','Interpreter','Latex');
+ylabel('Awcos(wt)','Interpreter','Latex');
